@@ -32,10 +32,6 @@ namespace Practices
         }
         public void AddToOrder(Product NewProduct)
         {
-            if (products.length == 0)
-            {
-
-            }
             foreach (Product P in products)
             {
                 if (P.Code == NewProduct.Code)

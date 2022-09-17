@@ -28,7 +28,7 @@ namespace Practices
             Prod2.Description = "Box of 24 colors";
             Prod2.Code = "MVSLEPYOHPOETM";
 
-            order.AddToOrder(Prod1);
+            order.products.Add(Prod1);
             order.AddToOrder(Prod2);
             order.shipping = 100;
             order.discount = 5;
