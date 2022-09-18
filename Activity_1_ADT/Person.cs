@@ -14,7 +14,13 @@ namespace Activity_1_ADT
         public int Age { get; set; }
         public string Gender { get; set; }
         public Boolean SuspicionOfFraud { get; set; }
+        public List<License> Licenses { get; set; }
+        public List<Vehicle> Vehicles { get; set; }
 
-
+        public Person()
+        {
+            this.Licenses = new List<License>();
+            this.Vehicles = new List<Vehicle>();
+        }
     }
 }

@@ -16,17 +16,5 @@ namespace Activity_1_ADT
         public string Description { get; set; }
         public string Wheels { get; set; }
         public string Color { get; set; }
-        public void WomenCar()
-        {
-            if (Color != "Red")
-            {
-                Console.WriteLine("Sorry, this car cannot be registed");
-            }
-            else
-            {
-                
-            }
-        }
-
     }
 }
