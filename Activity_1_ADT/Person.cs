@@ -22,5 +22,7 @@ namespace Activity_1_ADT
             this.Licenses = new List<License>();
             this.Vehicles = new List<Vehicle>();
         }
+
+
     }
 }
