@@ -10,39 +10,110 @@ namespace Activity_1_ADT
     {
         static void Main(string[] args)
         {
-            Vehicle[] Veh = new Vehicle[20];
-            Person[] Per = new Person[20];
-            License[] Lic = new License[20];
-            Regist Reg = new Regist();
-            
-            Person Per1 = new Person();
-            Vehicle Veh1 = new Vehicle();
-            License Lic1 = new License();
-            Per1.KeyCode = "DJSJD349CSJD2";
-            Per1.Name = "Juan Perez";
-            Per1.SurNames = "Alcachofas";
-            Per1.Age = 20;
-            Per1.Gender = "Male";
-            Per1.SuspicionOfFraud = false;
+            Vehicle Veh = new Vehicle();
+            Person Per = new Person();
+            License Lic = new License();
+            bool exit = false;
+            while(exit != true)
+            {
+                Console.WriteLine("What do you want to do?" + "\n" + "1.- Add Person" + "\n" + "2.- Enter a Person" + "\n" + "3.- Exit");
+                string Option = Console.ReadLine();
+                switch (Option)
+                {
+                    case "1":
+                        Console.WriteLine("You choose Add a Person");
+                        Console.WriteLine("Write the name");
+                        string Name = Console.ReadLine();
+                        Per.Name = Name;
+                        Console.WriteLine("Write the surname");
+                        string SurNames = Console.ReadLine();
+                        Per.SurNames = SurNames;
+                        Console.WriteLine("Write the KeyCode");
+                        string KeyCode = Console.ReadLine();
+                        Per.KeyCode = KeyCode;
+                        Console.WriteLine("Write the age");
+                        int Age = Convert.ToInt32(Console.ReadLine());
+                        Per.Age = Age;
+                        Console.WriteLine("Write the gender");
+                        string Gender = Console.ReadLine();
+                        Per.Gender = Gender;
+                        Per.AddPerson(Per);
 
-            Veh1.Type = "Truck";
-            Veh1.Year = 2022;
-            Veh1.Brand = "Toyota";
-            Veh1.Description = "White Truck with 4 cilinders motor";
-            Veh1.Wheels = "Michelin Middle Live";
-            Veh1.Color = "White";
-            Per1.Vehicles.Add(Veh1);
+                        break;
 
-            Lic1.KeyCode = Per1.KeyCode;
-            Lic1.InitialDate = "May 6th 2022";
-            Lic1.ExpirationDate = "May 6th 2025";
-            Lic1.Status = true;
-            Lic1.Type = "Vehicle License";
-            Per1.Licenses.Add(Lic1);
+                    case "2":
+                        Console.WriteLine("Enter KeyCode");
+                        string Key = Console.ReadLine();
+                        foreach (Person P in Per.Registered)
+                        {
+                            if(P.KeyCode == Key)
+                            {
+                                Per = P;
+                            }
+                        }
+                        bool user = true;
+                        while (user == true)
+                        {
+                            Console.WriteLine("welcome" + Per.Name);
+                            Console.WriteLine("1.- Add a car" + "\n" + "2.- Add a license" + "3.- Cancel Car" + "\n" + "4.- Exit");
+                            string Ops = Console.ReadLine();
+                            switch (Ops)
+                            {
+                                case "1":
+                                    Console.WriteLine("Type of the car");
+                                    string Type = Console.ReadLine();
+                                    Veh.Type = Type;
+                                    Console.WriteLine("Year of the car");
+                                    int Year = Convert.ToInt32(Console.ReadLine());
+                                    Console.WriteLine("Brand of the car");
+                                    string Brand = Console.ReadLine();
+                                    Veh.Brand = Brand;
+                                    Console.WriteLine("Write the description");
+                                    string Description = Console.ReadLine();
+                                    Veh.Description = Description;
+                                    Console.WriteLine("Wheels of the car");
+                                    string Wheels = Console.ReadLine();
+                                    Veh.Wheels = Wheels;
+                                    Console.WriteLine("Color of the car");
+                                    string Color = Console.ReadLine();
+                                    Veh.Color = Color;
+                                    Veh.AddVehicle(Veh, Per);
 
-            Reg.RegistPerson(Per1);
-            Console.WriteLine("Hello");            
+                                    break;
 
+                                case "2":
+                                    Lic.KeyCode = Per.KeyCode;
+                                    Console.WriteLine("Write the initial date of your license");
+                                    int Initial = Convert.ToInt32(Console.ReadLine());
+                                    Lic.InitialDate = Initial;
+                                    Console.WriteLine("Write the expiration of your license");
+                                    int Expiration = Convert.ToInt32(Console.ReadLine());
+                                    Lic.ExpirationDate = Expiration;
+                                    Console.WriteLine("Write the status of your license");
+                                    string Status = Console.ReadLine();
+                                    Lic.Status = Status;
+                                    Console.WriteLine("Write the type of your license");
+                                    string TypeLic = Console.ReadLine();
+                                    Lic.Type = TypeLic;
+                                    Lic.AddLicense(Lic, Per);
+
+                                    break;
+
+                                case "3":
+                                    Veh.CancelCar(Per);
+
+                                    break;
+
+                                case "4":
+                                    exit = true;
+
+                                    break;
+                            }
+                        }
+
+                        break;
+                }
+            }
         }
     }
 }

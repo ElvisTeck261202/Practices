@@ -9,9 +9,27 @@ namespace Activity_1_ADT
     internal class License
     {
         public string KeyCode { get; set; }
-        public string InitialDate { get; set; }
-        public string ExpirationDate { get; set; }
-        public Boolean Status { get; set; }
+        public int InitialDate { get; set; }
+        public int ExpirationDate { get; set; }
+        public string Status { get; set; }
         public string Type { get; set; }
+
+        public void AddLicense(License L, Person P)
+        {
+            bool AddLic = true;
+            foreach(License Lic in P.Licenses)
+            {
+                if(Lic.Type == L.Type && Lic.Status == "Valid")
+                {
+                    Console.WriteLine("You have a valid license");
+                    AddLic = false;
+                    break;
+                }
+            }
+            if (AddLic == true)
+            {
+                P.Licenses.Add(L);
+            }
+        }
     }
 }
