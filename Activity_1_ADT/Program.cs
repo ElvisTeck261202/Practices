@@ -13,6 +13,9 @@ namespace Activity_1_ADT
             Vehicle Veh = new Vehicle();
             Person Per = new Person();
             License Lic = new License();
+
+            Person Per1 = new Person();
+
             bool Exit = false;
             while(Exit != true)
             {
@@ -24,20 +27,20 @@ namespace Activity_1_ADT
                         Console.WriteLine("You choose Add a Person");
                         Console.WriteLine("Write the name");
                         string Name = Console.ReadLine();
-                        Per.Name = Name;
+                        Per1.Name = Name;
                         Console.WriteLine("Write the surname");
                         string SurNames = Console.ReadLine();
-                        Per.SurNames = SurNames;
+                        Per1.SurNames = SurNames;
                         Console.WriteLine("Write the KeyCode");
                         string KeyCode = Console.ReadLine();
-                        Per.KeyCode = KeyCode;
+                        Per1.KeyCode = KeyCode;
                         Console.WriteLine("Write the age");
                         int Age = Convert.ToInt32(Console.ReadLine());
-                        Per.Age = Age;
+                        Per1.Age = Age;
                         Console.WriteLine("Write the gender");
                         string Gender = Console.ReadLine();
-                        Per.Gender = Gender;
-                        Per.AddPerson(Per);
+                        Per1.Gender = Gender;
+                        Per.AddPerson(Per1);
 
                         break;
 
@@ -54,8 +57,8 @@ namespace Activity_1_ADT
                         bool user = true;
                         while (user == true)
                         {
-                            Console.WriteLine("welcome" + Per.Name);
-                            Console.WriteLine("1.- Add a car" + "\n" + "2.- Add a license" + "3.- Cancel Car" + "\n" + "4.- Exit");
+                            Console.WriteLine("welcome " + Per.Name);
+                            Console.WriteLine("1.- Add a car" + "\n" + "2.- Add a license" + "\n" + "3.- Cancel Car" + "\n" + "4.- Exit");
                             string Ops = Console.ReadLine();
                             switch (Ops)
                             {

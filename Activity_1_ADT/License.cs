@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 namespace Activity_1_ADT
 {
     internal class License
+
     {
+       // DateTime Date = new DateTime(17,);
+
         public string KeyCode { get; set; }
         public int InitialDate { get; set; }
         public int ExpirationDate { get; set; }

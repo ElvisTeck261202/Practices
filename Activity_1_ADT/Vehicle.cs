@@ -25,7 +25,7 @@ namespace Activity_1_ADT
                 Console.WriteLine("You cannot regist this car");
                 RegistCar = false;
             }
-            else if (P.Gender == "Men" && V.Brand != "Toyota" || V.Brand != "Ford")
+            else if (P.Gender == "Men" && V.Brand != "Toyota" && V.Brand != "Ford")
             {
                 Console.WriteLine("You Cannot regist this car");
                 RegistCar = false;
@@ -58,14 +58,29 @@ namespace Activity_1_ADT
         public void CancelCar(Person Per)
         {
             int CarToCancel = 0;
-            foreach(Vehicle V in Per.Vehicles)
+            bool Canel = true;
+            foreach (Vehicle V in Per.Vehicles)
             {
                 Console.WriteLine(Convert.ToString(CarToCancel) + " .- " + V);
                 CarToCancel += 1;
             }
+
             Console.WriteLine("What car do you want to cancel?");
             int CancelCar = Convert.ToInt32(Console.ReadLine());
-            Per.Vehicles.RemoveAt(CancelCar);
+            foreach (License L in Per.Licenses)
+            {
+                if (L.Status == "Unvalid")
+                {
+                    Console.WriteLine("You don't have a valid license to cancel this car");
+                    Canel = false;
+                }
+                if (Canel == true)
+                {
+                    Per.Vehicles.RemoveAt(CancelCar);
+                }
+
+            }
         }
     }
-}
+    }
+
