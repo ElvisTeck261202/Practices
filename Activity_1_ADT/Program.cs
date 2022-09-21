@@ -13,8 +13,8 @@ namespace Activity_1_ADT
             Vehicle Veh = new Vehicle();
             Person Per = new Person();
             License Lic = new License();
-            bool exit = false;
-            while(exit != true)
+            bool Exit = false;
+            while(Exit != true)
             {
                 Console.WriteLine("What do you want to do?" + "\n" + "1.- Add Person" + "\n" + "2.- Enter a Person" + "\n" + "3.- Exit");
                 string Option = Console.ReadLine();
@@ -105,13 +105,30 @@ namespace Activity_1_ADT
                                     break;
 
                                 case "4":
-                                    exit = true;
+                                    user = false;
+
+                                    break;
+
+                                default:
+                                    Console.WriteLine("You selected a unexistent option, Try Again");
 
                                     break;
                             }
                         }
 
                         break;
+
+                    case "3":
+                        Exit = true;
+
+                        break;
+
+                    default:
+                        Console.WriteLine("You selected an unexitent option");
+
+                        break;
+
+
                 }
             }
         }
