@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Activity_1_ADT", "Activity_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees_Practice", "Trees_Practice\Trees_Practice.csproj", "{C40DDD88-1424-49A3-BD99-4E4154B5C819}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph_Practice", "Graph_Practice\Graph_Practice.csproj", "{8AEDC2E8-934A-43A7-B069-DFCEFD9F2D3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C40DDD88-1424-49A3-BD99-4E4154B5C819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C40DDD88-1424-49A3-BD99-4E4154B5C819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C40DDD88-1424-49A3-BD99-4E4154B5C819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AEDC2E8-934A-43A7-B069-DFCEFD9F2D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEDC2E8-934A-43A7-B069-DFCEFD9F2D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEDC2E8-934A-43A7-B069-DFCEFD9F2D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEDC2E8-934A-43A7-B069-DFCEFD9F2D3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
